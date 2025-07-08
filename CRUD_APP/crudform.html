@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CrudForm</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #e8f0fe;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 30px 25px;
+      width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    input:focus, select:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    @media (max-width: 480px) {
+      .form-container {
+        padding: 25px 15px;
+      }
+      
+      
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Crud Operation</h2>
+    <form onsubmit="return ins()">
+
+      <label for="name">Enter Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="adhar">Enter Aadhaar (12 digits):</label>
+      <input type="text" id="adhar" pattern="\d{12}" maxlength="12" required>
+
+      <label for="checkin">Check-In Date:</label>
+      <input type="date" id="checkin" required>
+
+      <label for="checkout">Check-Out Date:</label>
+      <input type="date" id="checkout" required>
+
+      <label for="city">Select City:</label>
+      <select id="city" required>
+        <option value="">-- Choose City --</option>
+        <option value="Bhopal">Bhopal</option>
+        <option value="Indore">Indore</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Morena">Morena</option>
+      </select>
+
+      <label for="people">Enter Number of People:</label>
+      <input type="number" id="people" min="1" required>
+
+      <input type="submit" value="Book Now">
+    </form>
+  </div>
+
+  <script src="crud.js"></script>
+</body>
+</html>
