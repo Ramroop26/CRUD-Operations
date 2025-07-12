@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dice Roll</title>
+</head>
+<body>
+
+<h2 id="dice">🎲 Dice Roller</h2>
+<h3 id="result"></h3>
+<button onclick="showEmoji()">Roll Dice</button>
+
+
+<script>
+function rollDice() {
+ 
+    let emojis = [ "🎲"];
+    let index = Math.floor(Math.random() * emojis.length);
+      let dice = Math.floor(Math.random() * 6) + 1;
+  document.getElementById("dice").innerText = "You rolled: " + dice;
+    return emojis[index];
+    return emojis[dice]
+    
+
+  }
+
+  function showEmoji() {
+    document.getElementById("result").innerText = rollDice();
+
+     dice.style.transform = "rotate(0deg)";
+  setTimeout(() => {
+    dice.style.transform = "rotate(360deg)";
+  }, 10);
+  }
+</script>
+
+</body>
+</html>

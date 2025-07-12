@@ -1,9 +1,34 @@
 let FetchData=async()=>{
+
+    try{
     let url = 'http://localhost:3000/railway'
     let res = await fetch(url)
     let data = await res.json()
-    console.log(data);
+    DataShow(data);
+    }
+
+    catch(err){
+        console.log(err);
+    }
+}
+
+let searchh=async()=>{
+    let searchinp = document.querySelector("#searchh").value.toLowerCase()
+    let url = 'http://localhost:3000/railway'
+    let res = await fetch(url,{method:"GET"})
+    let data = await res.json();
+    
+    let FilterData = data.filter((e)=>{
+        return e.Name.toLowerCase().includes(searchinp) || e.Adhar.toString().includes(searchinp)
+    })
+    DataShow(FilterData)
+
+
+}
+
+let DataShow=(data)=>{
     let show = document.querySelector("#ShowData")
+    show.innerHTML=""
 
     data.map((e)=>{
         show.innerHTML+= `

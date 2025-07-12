@@ -1,0 +1,63 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calendar</title>
+</head>
+<body>
+
+<h2 id="monthYear"></h2>
+<table id="calendar" border="1" cellpadding="10"></table>
+
+<script>
+let Calender = () => {
+  let monthYear = document.getElementById("monthYear");
+  let calendar = document.getElementById("calendar");
+  calendar.innerHTML = "";
+
+  let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  // Show day names
+  let row = "<tr>";
+  for (let d of days) {
+    row += "<th>" + d + "</th>";
+  }
+  row += "</tr>";
+  calendar.innerHTML += row;
+
+  let today = new Date();
+  let year = today.getFullYear();
+  let month = today.getMonth(); // 0 = Jan
+  let firstDay = new Date(year, month, 1).getDay(); // 0 = Sun
+  let totalDays = new Date(year, month + 1, 0).getDate();
+
+  // Show month name
+  let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  monthYear.innerText = monthNames[month] + " " + year;
+
+  let date = 1;
+  for (let i = 0; i < 6; i++) {
+    let row = "<tr>";
+    for (let j = 0; j < 7; j++) {
+      if (i === 0 && j < firstDay) {
+        row += "<td></td>";
+      } else if (date > totalDays) {
+        break;
+      } else {
+        row += "<td>" + date + "</td>";
+        date++;
+      }
+    }
+    row += "</tr>";
+    calendar.innerHTML += row;
+    if (date > totalDays) break;
+  }
+};
+
+Calender(); // Call it to display calendar
+</script>
+
+</body>
+</html> -->
+
+

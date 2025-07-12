@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="Digital()" align="center"> 
+    <h1 id="show"></h1>
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Alarm with 1 Minute Sound</title>
+  <style>
+    body { text-align: center; margin-top: 100px; font-family: sans-serif; }
+    #clock { font-size: 3rem; margin-bottom: 20px; }
+    button { padding: 10px 20px; margin: 5px; }
+  </style>
+</head>
+<body onload="startClock()">
+
+  <div id="clock"></div>
+
+  <input type="time" id="alarmInput">
+  <button onclick="setAlarm()">Set Alarm</button>
+  <button onclick="stopAlarm()">Stop Alarm</button>
+
+  
+  <audio id="alarmSound" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto"></audio>
+
+  <script>
+    let alarmTime = null;
+    let alarmTimeout = null;
+
+    function startClock() {
+      setInterval(() => {
+        let now = new Date();
+        let h = String(now.getHours()).padStart(2, '0');
+        let m = String(now.getMinutes()).padStart(2, '0');
+        let s = String(now.getSeconds()).padStart(2, '0');
+
+        document.getElementById("clock").innerText = `${h}:${m}:${s}`;
+
+        let current = `${h}:${m}`;
+        if (alarmTime === current) {
+          ringAlarm();
+          alarmTime = null;  // Reset so it doesn't ring again
+        }
+      }, 1000);
+    }
+
+    function setAlarm() {
+      let input = document.getElementById("alarmInput").value;
+      if (input) {
+        alarmTime = input;
+        alert("Alarm set for " + alarmTime);
+      } else {
+        alert("Please select a valid time.");
+      }
+    }
+
+    function ringAlarm() {
+      let sound = document.getElementById("alarmSound");
+      sound.play();
+      alert("⏰ Alarm Ringing!");
+
+      // ✅ Stop audio after 1 minute (60000 ms)
+//       alarmTimeout = setTimeout(() => {
+//         sound.pause();
+//         sound.currentTime = 0;
+//       }, 60000);
+//     }
+
+//     function stopAlarm() {
+//       let sound = document.getElementById("alarmSound");
+//       sound.pause();
+//       sound.currentTime = 0;
+//       clearTimeout(alarmTimeout);
+//     }
+//   </script>
+
+// </body>
+// </html> -->
